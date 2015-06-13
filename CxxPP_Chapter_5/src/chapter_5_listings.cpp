@@ -69,11 +69,11 @@ void listing_5_17() {
 void listing_5_18() {
 	char ch;
 	int count=0;
-	cin.get(ch);
 	while (cin.fail() == false) {
 		cout << ch;
 		count++;
 		cin.get(ch);
 	}
-	cout << count <<" characters read.";
+	cin.clear();
+	cout << count <<" characters read";
 }
