@@ -6,7 +6,7 @@
  */
 
 #include <iostream>
-#include <string>
+#include <string.h>
 #include <ctime>
 #include "chapter_5.h"
 
