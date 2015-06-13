@@ -37,6 +37,19 @@ int main() {
 	default:
 		std::cout << "default";
 	}
+	int exercise;
+	std::cout << "\n\nWhich programming exercise: ";
+	std::cin >> exercise;
+	switch (exercise) {
+	case 1:
+		ex01();
+		break;
+	case 2:
+		ex02();
+		break;
+	default:
+		std::cout << "default";
+	}
 	return 0;
 }
 
