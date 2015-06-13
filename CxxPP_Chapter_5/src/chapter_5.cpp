@@ -47,6 +47,9 @@ int main() {
 	case 2:
 		ex02();
 		break;
+	case 3:
+		ex03();
+		break;
 	default:
 		std::cout << "default";
 	}

@@ -8,7 +8,6 @@
 #ifndef CHAPTER_5_H_
 #define CHAPTER_5_H_
 
-
 void listing_5_4();
 void listing_5_11();
 void listing_5_14();
@@ -19,6 +18,7 @@ void listing_5_20();
 
 void ex01();
 void ex02();
+void ex03();
 
 
 #endif /* CHAPTER_5_H_ */
