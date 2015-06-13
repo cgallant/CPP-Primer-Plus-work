@@ -31,6 +31,9 @@ int main() {
 	case 18:
 		listing_5_18();
 		break;
+	case 20:
+		listing_5_20();
+		break;
 	default:
 		std::cout << "default";
 	}

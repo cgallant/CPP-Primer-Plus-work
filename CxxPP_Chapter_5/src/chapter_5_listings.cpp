@@ -68,12 +68,34 @@ void listing_5_17() {
 
 void listing_5_18() {
 	char ch;
-	int count=0;
+	int count = 0;
 	while (cin.fail() == false) {
 		cout << ch;
 		count++;
 		cin.get(ch);
 	}
 	cin.clear();
-	cout << count <<" characters read";
+	cout << count << " characters read";
+}
+
+void listing_5_20() {
+	const int Cities = 5;
+	const int Years = 4;
+
+	const char * cities[Cities] = {  //array of pointers to 5 strings
+			"Gribble City", "Gribbletown", "New Gribble", "San Gribble",
+					"Gribble Vista" };
+	int maxtemps[Years][Cities] = { { 96, 100, 87, 101, 105 }, { 96, 98, 91,
+			107, 104 }, { 97, 101, 93, 108, 107 }, { 98, 103, 95, 109, 108 } };
+
+	cout << "Listing 5.20\n\n";
+	cout << "Maximum temperatures for 2008-2011\n";
+
+	for (int city = 0; city < Cities; ++city) {
+		cout << cities[city];
+		for (int year = 0; year < Years; ++year) {
+			cout << "\t" << maxtemps[year][city];
+		}
+		cout << endl;
+	}
 }
