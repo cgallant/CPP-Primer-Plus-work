@@ -50,6 +50,12 @@ int main() {
 	case 3:
 		ex03();
 		break;
+	case 4:
+		ex04();
+		break;
+	case 5:
+		ex05();
+		break;
 	default:
 		std::cout << "default";
 	}

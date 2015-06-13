@@ -19,6 +19,7 @@ void listing_5_20();
 void ex01();
 void ex02();
 void ex03();
-
+void ex04();
+void ex05();
 
 #endif /* CHAPTER_5_H_ */
