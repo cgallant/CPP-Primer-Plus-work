@@ -3,7 +3,7 @@
  *
  *  Created on: Jun 13, 2015
  *      Author: Chad
- /*
+ *
  You sell the book C++ for Fools. Write a program that has you
  enter a year’s worth of monthly sales (in terms of number
  of books, not of money). The program should use a loop to
