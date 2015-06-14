@@ -62,6 +62,15 @@ int main() {
 	case 7:
 		ex07();
 		break;
+	case 8:
+		ex08();
+		break;
+	case 9:
+		ex09();
+		break;
+	case 10:
+		ex10();
+		break;
 	default:
 		std::cout << "default";
 	}
