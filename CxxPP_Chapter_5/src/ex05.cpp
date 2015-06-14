@@ -15,7 +15,6 @@
  */
 
 #include <iostream>
-#include "chapter_5.h"
 
 void ex05() {
 	using namespace std;

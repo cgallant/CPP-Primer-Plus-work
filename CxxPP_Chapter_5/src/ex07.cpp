@@ -29,7 +29,6 @@
  */
 #include <iostream>
 #include <string>
-#include "chapter_5.h"
 
 struct car {
 	std::string make;

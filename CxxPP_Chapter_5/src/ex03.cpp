@@ -7,7 +7,6 @@
  should report the cumulative sum of the entries to date. The program should terminate
  when the user enters 0.*/
 #include <iostream>
-#include "chapter_5.h"
 
 void ex03() {
 	using namespace std;

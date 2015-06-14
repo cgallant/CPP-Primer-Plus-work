@@ -19,7 +19,6 @@
  for the value of Cleo’s investment to exceed the value of Daphne’s investment and
  then displays the value of both investments at that time.*/
 #include <iostream>
-#include "chapter_5.h"
 
 void ex04() {
 	using namespace std;

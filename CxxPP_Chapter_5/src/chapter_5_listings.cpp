@@ -8,7 +8,6 @@
 #include <iostream>
 #include <string.h>
 #include <ctime>
-#include "chapter_5.h"
 
 using namespace std;
 

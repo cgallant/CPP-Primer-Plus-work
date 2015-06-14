@@ -9,7 +9,6 @@
  for the combined years.
  */
 #include <iostream>
-#include "chapter_5.h"
 
 void ex06() {
 	using namespace std;

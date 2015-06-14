@@ -10,7 +10,6 @@
  9 is 44.
  */
 #include <iostream>
-#include "chapter_5.h"
 
 void ex01() {
 	using namespace std;
