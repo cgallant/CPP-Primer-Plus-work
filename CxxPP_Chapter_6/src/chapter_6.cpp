@@ -21,6 +21,9 @@ int main() {
 	case 11:
 		listing_6_11();
 		break;
+	case 12:
+		listing_6_12();
+		break;
 	default:
 		cout<<"Default."<<endl;
 	}

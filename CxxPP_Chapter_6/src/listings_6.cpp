@@ -1,5 +1,12 @@
 /*
- * listings_5.cpp
+ * listings_6.cpp
+ *
+ *  Created on: Jun 18, 2015
+ *      Author: Chad
+ */
+
+/*
+ * listings_6.cpp
  *
  *  Created on: Jun 16, 2015
  *      Author: Chad
@@ -65,3 +72,10 @@ void listing_6_11() {
 	}
 	cout << "Bye\n";
 }
+
+void listing_6_12(){
+	using namespace std;
+	cout<<"Listing 6.12.\n\n";
+}
+
+
