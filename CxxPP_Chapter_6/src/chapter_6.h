@@ -8,10 +8,7 @@
 #ifndef CHAPTER_6_H_
 #define CHAPTER_6_H_
 
-void lising_6_1(){
-
-}
-
-
+void listing_6_2();
+void listing_6_11();
 
 #endif /* CHAPTER_6_H_ */

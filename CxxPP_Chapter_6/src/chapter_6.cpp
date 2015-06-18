@@ -9,6 +9,21 @@
 
 int main() {
 	using namespace std;
+	int listing = 0;
+	int exercise = 0;
 	cout << "Chapter 6." << endl;
+	cout << "Listing: ";
+	cin>>listing;
+	switch (listing){
+	case 2:
+		listing_6_2();
+		break;
+	case 11:
+		listing_6_11();
+		break;
+	default:
+		cout<<"Default."<<endl;
+	}
+
 	return 0;
 }
