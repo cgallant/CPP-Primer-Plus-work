@@ -13,8 +13,8 @@ int main() {
 	int exercise = 0;
 	cout << "Chapter 6." << endl;
 	cout << "Listing: ";
-	cin>>listing;
-	switch (listing){
+	cin >> listing;
+	switch (listing) {
 	case 2:
 		listing_6_2();
 		break;
@@ -24,8 +24,11 @@ int main() {
 	case 12:
 		listing_6_12();
 		break;
+	case 13:
+		listing_6_13();
+		break;
 	default:
-		cout<<"Default."<<endl;
+		cout << "Default." << endl;
 	}
 
 	return 0;
