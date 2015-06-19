@@ -114,5 +114,23 @@ void listing_6_13() {
 			cout << "fish #" << i + 1 << ": ";
 		}
 	}
-	cout << sum/double(i) << " = average weight of "<< i <<" fish\nDone";
+	cout << sum / double(i) << " = average weight of " << i << " fish\nDone";
+}
+void listing_6_14() {
+	using namespace std;
+	const int Max = 5;
+	int scores[Max], sum = 0;
+	cout << "Please enter your golf scores.\n" << "You must enter " << Max
+			<< " rounds." << endl;
+	for (int i = 0; i < Max; ++i) {
+		cout << "round #" << i + 1 << ": ";
+		while (!(cin >> scores[i])) {
+			cin.clear(); //reset
+			while (cin.get() != '\n')
+				continue;
+			cout << "Please enter a number.\n";
+		}
+		sum += scores[i];
+	}
+	cout << sum;
 }

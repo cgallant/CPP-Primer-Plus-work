@@ -27,6 +27,9 @@ int main() {
 	case 13:
 		listing_6_13();
 		break;
+	case 14:
+		listing_6_14();
+		break;
 	default:
 		cout << "Default." << endl;
 	}
