@@ -13,6 +13,8 @@
  */
 
 #include <iostream>
+#include <fstream>
+
 //#include "chapter_6.h"
 
 using namespace std;
@@ -133,4 +135,43 @@ void listing_6_14() {
 		sum += scores[i];
 	}
 	cout << sum;
+}
+//outfile.cpp
+void listing_6_15() {
+	ofstream outFile;
+
+	const int Max = 50;
+	using namespace std;
+	cin.get(); // clear buffer
+	cout << "Listing 6.15.\n\n";
+
+	cout << "Enter the make and model of automobile: ";
+	char make_and_model[Max];
+	cin.getline(make_and_model, Max);
+
+	cout << "Enter the model year: ";
+	int year;
+	cin >> year;
+	cin.get(); //clear buffer
+
+	cout << "Enter the original asking price: ";
+	double a_price;
+	cin >> a_price;
+	double d_price;
+	d_price = .913 * a_price;
+
+	cout << "Make and model: " << make_and_model << endl;
+	cout << "Year: " << year << endl;
+	cout << "Was asking: $" << a_price << endl;
+	cout << "Now asking: $" << d_price << endl;
+
+	outFile.open("CarFile.txt");
+	outFile << fixed;
+	outFile.precision(2);
+	outFile.setf(ios_base::showpoint);
+	outFile << "Make and model: " << make_and_model << endl;
+	outFile << "Year: " << year << endl;
+	outFile << "Was asking: $" << a_price << endl;
+	outFile << "Now asking: $" << d_price << endl;
+	outFile.close();
 }
