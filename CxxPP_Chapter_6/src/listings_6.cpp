@@ -14,6 +14,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <cstdlib>  //support for exit()
 
 //#include "chapter_6.h"
 
@@ -160,6 +161,8 @@ void listing_6_15() {
 	double d_price;
 	d_price = .913 * a_price;
 
+	cout << fixed;
+	cout.precision(2);
 	cout << "Make and model: " << make_and_model << endl;
 	cout << "Year: " << year << endl;
 	cout << "Was asking: $" << a_price << endl;
@@ -174,4 +177,43 @@ void listing_6_15() {
 	outFile << "Was asking: $" << a_price << endl;
 	outFile << "Now asking: $" << d_price << endl;
 	outFile.close();
+}
+
+void listing_6_16() {
+	cin.get();
+	ifstream inFile;
+	char filename[40];
+	cout << "Enter name of data file: ";
+	cin.getline(filename, 40);
+	cout << filename;
+	inFile.open(filename);
+
+	if (!inFile.is_open()) {
+		cout << "Could not open file" << endl;
+		cout << "Program terminating." << endl;
+		exit(EXIT_FAILURE);
+	}
+
+	double value = 0, sum = 0;
+	int count = 0;
+	while (inFile >> value) {  //while input good and not EOF
+		cout << value << "  ";
+		++count;
+		cout << count << endl;
+		sum += value;
+	}
+	if (inFile.eof())
+		cout << "\nEnd of file reached.\n";
+	else if (inFile.fail())
+		cout << "Data mismatch.\n";
+	else
+		cout << "Input terminated for unknown reasons.\n";
+	if (count == 0)
+		cout << "No data processed.\n";
+	else {
+		cout << "Items read: " << count << endl;
+		cout << "Sum: " << sum << endl;
+		cout << "Average: " << sum / count << endl;
+	}
+	inFile.close();
 }

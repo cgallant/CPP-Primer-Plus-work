@@ -33,6 +33,9 @@ int main() {
 	case 15:
 		listing_6_15();
 		break;
+	case 16:
+		listing_6_16();
+		break;
 	default:
 		cout << "Default." << endl;
 	}
