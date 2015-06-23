@@ -17,5 +17,6 @@ void listing_6_15();
 void listing_6_16();
 
 void ex01();
+void ex02();
 
 #endif /* CHAPTER_6_H_ */
