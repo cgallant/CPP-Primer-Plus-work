@@ -10,7 +10,6 @@
 int main() {
 	using namespace std;
 	int listing = 0;
-	int exercise = 0;
 	cout << "Chapter 6." << endl;
 	cout << "Listing: ";
 	cin >> listing;
@@ -38,6 +37,17 @@ int main() {
 		break;
 	default:
 		cout << "Default." << endl;
+	}
+	cin.get();
+	cout << "Which programming exercise: " << endl;
+	int exercise = 0;
+	cin >> exercise;
+	switch (exercise) {
+	case 1:
+		ex01();
+		break;
+	default:
+		cout << "No programming exercise to run.\n";
 	}
 
 	return 0;
