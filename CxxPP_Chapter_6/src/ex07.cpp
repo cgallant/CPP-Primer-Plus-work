@@ -37,15 +37,15 @@ void ex07() {
 			break;
 		}
 		if (isalpha(ch[0])) {
-			c_count += 1; //assume it's a consonant until proven otherwise
+			c_count++; //assume it's a consonant until proven otherwise
 			for (int i = 0; i < 5; ++i) {
 				if (ch[0] == vowels[i]) {
-					v_count += 1;  //add one to vowel count
-					c_count -= 1;  //tke one away from consnant count
+					v_count++;  //add one to vowel count
+					c_count--;  //take one away from constant count
 				}
 			}
 		} else {
-			o_count += 1;
+			o_count++;
 		}
 	}
 	cout << v_count << " words beginning with vowels\n" << c_count

@@ -46,7 +46,7 @@ void ex06() {
 	for (int i = 0; i < num; ++i) {
 		if (ps[i].contribution >= 10000) {
 			cout << ps[i].contributors << ",  $" << ps[i].contribution << endl;
-			c += 1;
+			c++;
 		}
 	}
 	if (0 == c)
@@ -56,7 +56,7 @@ void ex06() {
 	for (int i = 0; i < num; ++i) {
 		if (ps[i].contribution < 10000) {
 			cout << ps[i].contributors << ",  $" << ps[i].contribution << endl;
-			c += 1;
+			c++;
 		}
 	}
 	if (0 == c)

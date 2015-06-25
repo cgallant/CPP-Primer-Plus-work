@@ -22,14 +22,15 @@ void ex08() {
 	cout << "Name of file: ";
 	cin.getline(file, len);
 	inFile.open(file);
-	int count = -1;
+	int count = 0;
 	char ch;
 	if (!inFile.is_open()) {
 		cout << "Could not open file " << file << endl;
 		cout << "Program terminating.\n" << endl;
 		exit(EXIT_FAILURE);
 	}
-	while (!inFile.eof()) {
+	inFile >> ch;
+	while (inFile.good()) {
 		inFile >> ch;
 		count++;
 	}
