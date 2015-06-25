@@ -61,6 +61,9 @@ int main() {
 	case 6:
 		ex06();
 		break;
+	case 7:
+		ex07();
+		break;
 	default:
 		cout << "No programming exercise to run.\n";
 	}
