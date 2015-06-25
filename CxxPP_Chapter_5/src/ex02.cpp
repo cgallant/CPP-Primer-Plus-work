@@ -9,9 +9,9 @@
  */
 
 #include <iostream>
-#include <array>
+#include <array> //array
 
-void ex02() {
+void ex02() {/*
 	using namespace std;
 	const int array_size = 100;
 	array<long double, array_size> factorials;
@@ -21,5 +21,5 @@ void ex02() {
 	}
 	for (int i = 0; i <= array_size; ++i) {
 		cout << i << "! = " << factorials[i] << endl;
-	}
+		*/
 }
