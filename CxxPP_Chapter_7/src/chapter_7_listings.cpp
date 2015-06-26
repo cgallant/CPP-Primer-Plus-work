@@ -71,3 +71,63 @@ int sum_array_2(int * a, int n) { //parameters are array name and size
 	}
 	return total;
 }
+
+//LISTING 7.7
+int fill_array(double *, int);
+void show_array(const double *, int);
+void revalue(double, double*, int);
+
+void listing_7_7() {
+	using namespace std;
+	cin.get(); //clear return key
+	const int Max = 5;
+	cout << "Listing 7.7; arrfun.cpp\n\n";
+	double properties[Max];
+	int size = fill_array(properties, Max);
+	cout << "size: " << size << endl;
+	show_array(properties, size);
+	if (size > 0) {
+		cout << "Enter revaluation factor: ";
+		double factor;
+		if (!(cin >> factor)) {
+			cin.clear();
+			while (cin.get() != '\n') {
+				continue;
+			}
+			cout << "Invalid input.\n";
+		}
+		revalue(factor, properties, size);
+		show_array(properties, size);
+	}
+}
+
+int fill_array(double a[], int n) {
+	using namespace std;
+	double temp;
+	cout << "Enter values (negative number to terminate).\n";
+	int i;
+	for (i = 0; i < n; i++) {
+		cout << "Enter value #" << i + 1 << ": ";
+		cin >> temp;
+		if (!cin) {
+			cout << "Input failed.\n";
+			break;
+		} else if (temp < 0) {
+			break;
+		}
+		a[i] = temp;
+	}
+	return i;
+}
+
+void show_array(const double a[], int n) {
+	using namespace std;
+	for (int i = 0; i < n; i++) {
+		cout << "Property #" << i + 1 << ": $" << a[i] << endl;
+	}
+}
+void revalue(double f, double a[], int n) {
+	for (int i = 0; i < n; i++) {
+		a[i] = a[i] * f;
+	}
+}
