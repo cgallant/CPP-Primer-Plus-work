@@ -99,6 +99,7 @@ void listing_7_7() {
 		revalue(factor, properties, size);
 		show_array(properties, size);
 	}
+	cout << "Done.";
 }
 
 int fill_array(double a[], int n) {
