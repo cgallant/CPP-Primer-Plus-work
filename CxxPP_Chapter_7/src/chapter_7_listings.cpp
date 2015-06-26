@@ -132,3 +132,30 @@ void revalue(double f, double a[], int n) {
 		a[i] = a[i] * f;
 	}
 }
+
+// Listing 7.8
+int sum_array_4(const int *, const int *);
+void listing_7_8() {
+	using namespace std;
+	cout << "Listing 7.8.\n\n";
+	int cookies[arr_size] = { 1, 2, 4, 8, 16, 32, 64, 128 };
+	cout << "Listing 7.6; arrfun4.cpp\n\n";
+	cout << cookies << " = array address, " << sizeof(cookies)
+			<< " = sizeof cookies.\n";
+	int sum = sum_array_4(cookies, cookies + arr_size);
+	cout << "Total cookies eaten: " << sum << endl;
+	sum = sum_array_4(cookies, cookies + arr_size);
+	cout << "First three eaters ate " << sum << " cookies.\n";
+	sum = sum_array_4(cookies + 4, cookies + arr_size);
+	cout << "Last four eaters ate " << sum << " cookies.\n";
+}
+
+int sum_array_4(const int * begin, const int *end) { //parameters are array name and size
+	int total = 0;
+	std::cout << begin << " = a address, " << sizeof(begin) << " = sizeof a.\n";
+	const int *pt;
+	for (pt = begin; pt != end; pt++) {
+		total += *pt;
+	}
+	return total;
+}
