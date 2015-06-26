@@ -28,8 +28,22 @@ long double probability(int numbers, int picks) {
 	return result;
 }
 
+const int arr_size = 8;
+int sum_array(int[], int);
+
 void listing_7_5() {
 	using namespace std;
-	cout << "Listing 7.5; arrfun1.cpp";
+	int cookies[arr_size] = { 1, 2, 4, 8, 16, 32, 64, 128 };
+	cout << "Listing 7.5; arrfun1.cpp\n\n";
+	int sum = sum_array(cookies, arr_size);
+	cout << "Total cookies eaten: " << sum << endl;
+}
 
+int sum_array(int a[], int n)  //parameters are array name and size
+		{
+	int total = 0;
+	for (int i = 0; i < n; i++) {
+		total += a[i];
+	}
+	return total;
 }
