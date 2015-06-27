@@ -6,6 +6,7 @@
  */
 
 #include <iostream>
+
 long double probability(int numbers, int picks);
 
 void listing_7_4() {
@@ -158,4 +159,29 @@ int sum_array_4(const int * begin, const int *end) { //parameters are array name
 		total += *pt;
 	}
 	return total;
+}
+// LISTING 7.9; strfun.cpp
+
+unsigned int c_in_string(const char *, char);
+void listing_7_9() {
+	using namespace std;
+	cin.get();
+	cout << "Listing 7.9.\n\n";
+	char mmm[15] = "minimum";
+	char * wail = "ululate";
+	unsigned int a = c_in_string(mmm, 'm');
+	unsigned int b = c_in_string(wail, 'u');
+	cout << a << " m characters in minimum\n";
+	cout << b << " u characters in ululate";
+}
+
+unsigned int c_in_string(const char *a, char c) {
+	int count = 0;
+	while (*a) {
+		if (*a == c) {
+			count++;
+		}
+		a++;
+	}
+	return count;
 }
