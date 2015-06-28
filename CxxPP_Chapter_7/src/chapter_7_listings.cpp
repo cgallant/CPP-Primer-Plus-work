@@ -200,15 +200,18 @@ void listing_7_10() {
 	cin >> ch;
 	cout << "Enter an integer: ";
 	cin >> num;
-	cout << buildstr(ch, num) << endl;
+	char * ps;
+	ps = buildstr(ch, num);
+	cout << ps << endl;
+	delete [] ps;
 	cout << buildstr('+', 20) << "-Done-" << buildstr('+', 20);
 }
 
 char * buildstr(char c, int n) {
 	char * pt = new char[n + 1];
-	for (int i = 0; i < n; i++) {
-		pt[i] = c;
-	}
 	pt[n] = '\0';
+	while (n-- > 0) {
+		pt[n] = c;
+	}
 	return pt;
 }
