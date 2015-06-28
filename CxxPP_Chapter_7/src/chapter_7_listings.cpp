@@ -185,3 +185,30 @@ unsigned int c_in_string(const char *a, char c) {
 	}
 	return count;
 }
+
+//Listing 7.10;  strgback.cpp -- a function that returns a pointer to char
+//
+void listing_7_10() {
+	using namespace std;
+	char * buildstr(char, int); //function prototype
+	char ch;
+	int num;
+
+	cin.get();
+	cout << "Listing 7.10.\n\n";
+	cout << "Enter a character: ";
+	cin >> ch;
+	cout << "Enter an integer: ";
+	cin >> num;
+	cout << buildstr(ch, num) << endl;
+	cout << buildstr('+', 20) << "-Done-" << buildstr('+', 20);
+}
+
+char * buildstr(char c, int n) {
+	char * pt = new char[n + 1];
+	for (int i = 0; i < n; i++) {
+		pt[i] = c;
+	}
+	pt[n] = '\0';
+	return pt;
+}
