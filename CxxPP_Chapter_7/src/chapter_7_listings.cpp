@@ -412,3 +412,19 @@ double betsy(int lns) {
 double pam(int lns) {
 	return 0.03 * lns + .0004 * lns * lns;
 }
+//Chapter review 4 - function to alter an array using the beginning and end addresses
+void cr_4(int *, int*, int);
+
+void chapter_review_4() {
+	int ar[5] = { 1, 2, 3, 4, 5 };
+	for (int i = 0; i < 5; i++) {
+		cout << ar[i] << endl;
+	}
+}
+
+void cr_4(int *begin, int *end, int n) {
+	for (int *pt = begin; pt != end; pt++) {
+		*pt=n;
+		cout<<*pt<<endl;
+	}
+}

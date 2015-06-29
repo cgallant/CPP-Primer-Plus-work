@@ -23,5 +23,6 @@ void listing_7_13();
 void listing_7_14();
 void listing_7_16();
 void listing_7_17();
+void chapter_review_4();
 
 #endif /* CHAPTER_7_H_ */
