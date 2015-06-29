@@ -376,8 +376,6 @@ void listing_7_16() {
 	int num;
 	cin >> num;
 	countdown(num);
-	cout << endl << countdown;
-
 }
 void countdown(int n) {
 	std::cout << "Counting down... " << n << std::endl;
@@ -385,4 +383,32 @@ void countdown(int n) {
 		countdown(n);
 	}
 	std::cout << n << ": Kaboom!\n";
+}
+
+//LISTING 7.17 - fun_ptr.cpp - pointers to functions
+double pam(int);
+double betsy(int);
+void estimate(int, double (*)(int));
+
+void listing_7_17() {
+	using namespace std;
+	cout << "Listing 7.17\n\n";
+	cin.get();
+	int lines;
+	cout << "How many lines of code do you need: ";
+	cin >> lines;
+	cout << "Here's Betsy's estimate: " << endl;
+	estimate(lines, betsy);
+	cout << "Here's Pam's's estimate: " << endl;
+	estimate(lines, pam);
+}
+void estimate(int lines, double (*pf)(int)) {
+	using namespace std;
+	cout << lines << " lines will take " << (*pf)(lines) << " hour(s)\n";
+}
+double betsy(int lns) {
+	return 0.05 * lns;
+}
+double pam(int lns) {
+	return 0.03 * lns + .0004 * lns * lns;
 }
