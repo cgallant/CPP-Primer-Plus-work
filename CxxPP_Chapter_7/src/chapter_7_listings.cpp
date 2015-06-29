@@ -203,7 +203,7 @@ void listing_7_10() {
 	char * ps;
 	ps = buildstr(ch, num);
 	cout << ps << endl;
-	delete [] ps;
+	delete[] ps;
 	cout << buildstr('+', 20) << "-Done-" << buildstr('+', 20);
 }
 
@@ -214,4 +214,38 @@ char * buildstr(char c, int n) {
 		pt[n] = c;
 	}
 	return pt;
+}
+
+/// LISTING 7.11;  Travel.cpp - using structures with functions
+
+struct travel_time {
+	int hours;
+	int mins;
+};
+
+travel_time sum(travel_time, travel_time);  //prototype
+void show_travel_time(travel_time); //prototype
+
+void listing_7_11() {
+	using namespace std;
+	cout << "Listing 7.11\n\n";
+	travel_time t1 = { 5, 45 };
+	travel_time t2 = { 4, 55 };
+	travel_time t3 = { 4, 32 };
+	cout << "Two-day total: ";
+	show_travel_time(sum(t1, t2));
+	cout << "Three-day total: ";
+	show_travel_time(sum(sum(t1, t2), t3));
+}
+
+travel_time sum(travel_time t1, travel_time t2) {
+	travel_time sum;
+	sum.mins = (t1.mins + t2.mins) % 60;
+	sum.hours = t1.hours + t2.hours + (t1.mins + t2.mins) / 60;
+	return sum;
+}
+
+void show_travel_time(travel_time temp) {
+	std::cout << temp.hours << " hours, " << temp.mins << " minutes"
+			<< std::endl;
 }
