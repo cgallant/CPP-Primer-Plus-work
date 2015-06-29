@@ -56,6 +56,9 @@ int main(void) {
 	case 24:
 		chapter_review_4();
 		break;
+	case 28:
+		chapter_review_8();
+		break;
 	default:
 		cout << "No such listing.\n\n";
 	}

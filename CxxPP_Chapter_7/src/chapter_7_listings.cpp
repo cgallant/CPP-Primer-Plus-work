@@ -424,7 +424,30 @@ void chapter_review_4() {
 
 void cr_4(int *begin, int *end, int n) {
 	for (int *pt = begin; pt != end; pt++) {
-		*pt=n;
-		cout<<*pt<<endl;
+		*pt = n;
+		cout << *pt << endl;
 	}
+}      // CHAPTER REVIEW 8
+int replace(char *str, char c1, char c2);
+void chapter_review_8() {
+	using namespace std;
+	char str[16] = { "Have a nice day" };
+	char c1 = 'a', c2 = '!';
+	cout << "Chapter review 8\n\n";
+	cout << replace(str, c1, c2) << " replacements.\n";
+	std::cout << str << endl;
+}
+
+int replace(char *s, char c1, char c2) {
+	char *pc = s;
+	int n = 0;
+	while (*s) {
+		if (*s == c1) {
+			*s = c2;
+			n++;
+		}
+		s++;
+	}
+	cout << pc << endl;
+	return n;
 }
