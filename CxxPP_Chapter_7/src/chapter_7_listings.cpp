@@ -365,3 +365,24 @@ void display_string(const string sa[], int n) {
 		std::cout << i + 1 << ": " << sa[i] << endl;
 	}
 }
+//LISTING 7.16 - recur.cpp - using recursion
+void countdown(int);
+
+void listing_7_16() {
+	using namespace std;
+	cin.get();
+	cout << "Listing 7.16.\n\n";
+	cout << "Enter an integer: ";
+	int num;
+	cin >> num;
+	countdown(num);
+	cout << endl << countdown;
+
+}
+void countdown(int n) {
+	std::cout << "Counting down... " << n << std::endl;
+	if (--n > 0) {
+		countdown(n);
+	}
+	std::cout << n << ": Kaboom!\n";
+}

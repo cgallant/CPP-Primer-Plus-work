@@ -21,5 +21,6 @@ void listing_7_11();
 void listing_7_12();
 void listing_7_13();
 void listing_7_14();
+void listing_7_16();
 
 #endif /* CHAPTER_7_H_ */

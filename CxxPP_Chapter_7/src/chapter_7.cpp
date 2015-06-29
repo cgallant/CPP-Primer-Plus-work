@@ -8,12 +8,12 @@
 #include <iostream>
 #include "chapter_7.h"
 
-int main(void){
+int main(void) {
 	using namespace std;
 	int listing, exercise;
-	cout<<"Which listing: ";
-	cin>>listing;
-	switch (listing){
+	cout << "Which listing: ";
+	cin >> listing;
+	switch (listing) {
 	case 4:
 		listing_7_4();
 		break;
@@ -47,11 +47,12 @@ int main(void){
 	case 14:
 		listing_7_14();
 		break;
+	case 16:
+		listing_7_16();
+		break;
 	default:
-		cout<<"No such listing.\n\n";
+		cout << "No such listing.\n\n";
 	}
 
-
 }
-
 
