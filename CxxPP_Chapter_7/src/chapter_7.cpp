@@ -44,6 +44,9 @@ int main(void){
 	case 13:
 		listing_7_13();
 		break;
+	case 14:
+		listing_7_14();
+		break;
 	default:
 		cout<<"No such listing.\n\n";
 	}

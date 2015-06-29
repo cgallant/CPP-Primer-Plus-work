@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <cmath>
+#include <string>
 
 long double probability(int numbers, int picks);
 
@@ -251,101 +252,116 @@ void show_travel_time(travel_time temp) {
 
 //LISTING 7.12; Structfun.cpp -- functions with a structure argument
 // structure declarations
-struct polar
-{
-    double distance;      // distance from origin
-    double angle;         // direction from origin
+struct polar {
+	double distance;      // distance from origin
+	double angle;         // direction from origin
 };
-struct rect
-{
-    double x;             // horizontal distance from origin
-    double y;             // vertical distance from origin
+struct rect {
+	double x;             // horizontal distance from origin
+	double y;             // vertical distance from origin
 };
 
 // prototypes
 polar rect_to_polar(rect xypos);
 void show_polar(polar dapos);
 
-void listing_7_12()
-{
-    using namespace std;
-    rect rplace;
-    polar pplace;
+void listing_7_12() {
+	using namespace std;
+	rect rplace;
+	polar pplace;
 
-    cout << "Enter the x and y values: ";
-    while (cin >> rplace.x >> rplace.y)  // slick use of cin
-    {
-        pplace = rect_to_polar(rplace);
-        show_polar(pplace);
-        cout << "Next two numbers (q to quit): ";
-    }
-    cout << "Done.\n";
+	cout << "Enter the x and y values: ";
+	while (cin >> rplace.x >> rplace.y)  // slick use of cin
+	{
+		pplace = rect_to_polar(rplace);
+		show_polar(pplace);
+		cout << "Next two numbers (q to quit): ";
+	}
+	cout << "Done.\n";
 }
 
 // convert rectangular to polar coordinates
-polar rect_to_polar(rect xypos)
-{
-    using namespace std;
-    polar answer;
+polar rect_to_polar(rect xypos) {
+	using namespace std;
+	polar answer;
 
-    answer.distance =
-    sqrt( xypos.x * xypos.x + xypos.y * xypos.y);
-    answer.angle = atan2(xypos.y, xypos.x);
-    return answer;      // returns a polar structure
+	answer.distance = sqrt(xypos.x * xypos.x + xypos.y * xypos.y);
+	answer.angle = atan2(xypos.y, xypos.x);
+	return answer;      // returns a polar structure
 }
 
 // show polar coordinates, converting angle to degrees
-void show_polar (polar dapos)
-{
-    using namespace std;
-    const double Rad_to_deg = 57.29577951;
+void show_polar(polar dapos) {
+	using namespace std;
+	const double Rad_to_deg = 57.29577951;
 
-    cout << "distance = " << dapos.distance;
-    cout << ", angle = " << dapos.angle * Rad_to_deg;
-    cout << " degrees\n";
+	cout << "distance = " << dapos.distance;
+	cout << ", angle = " << dapos.angle * Rad_to_deg;
+	cout << " degrees\n";
 }
 //LISTING 7.13; Structptr.cpp -- functions with a structure argument
 // structure declarations
 
 // prototypes
-polar rect_to_polar_ptr(rect *);
-void show_polar_ptr(polar *);
+polar rect_to_polar_ptr(const rect *);
+void show_polar_ptr(const polar *);
 
-void listing_7_13()
-{
-    using namespace std;
-    rect rplace;
-    polar pplace;
+void listing_7_13() {
+	using namespace std;
+	rect rplace;
+	polar pplace;
 
-    cout << "Enter the x and y values: ";
-    while (cin >> rplace.x >> rplace.y)  // slick use of cin
-    {
-        pplace = rect_to_polar_ptr(&rplace);
-        show_polar_ptr(&pplace);
-        cout << "Next two numbers (q to quit): ";
-    }
-    cout << "Done.\n";
+	cout << "Enter the x and y values: ";
+	while (cin >> rplace.x >> rplace.y)  // slick use of cin
+	{
+		pplace = rect_to_polar_ptr(&rplace);
+		show_polar_ptr(&pplace);
+		cout << "Next two numbers (q to quit): ";
+	}
+	cout << "Done.\n";
 }
 
 // convert rectangular to polar coordinates
-polar rect_to_polar_ptr(rect *xypos)
-{
-    using namespace std;
-    polar answer;
+polar rect_to_polar_ptr(const rect *xypos) {
+	using namespace std;
+	polar answer;
 
-    answer.distance =
-    sqrt( xypos->x * xypos->x + xypos->y * xypos->y);
-    answer.angle = atan2(xypos->y, xypos->x);
-    return answer;      // returns a polar structure
+	answer.distance = sqrt(xypos->x * xypos->x + xypos->y * xypos->y);
+	answer.angle = atan2(xypos->y, xypos->x);
+	return answer;      // returns a polar structure
 }
 
 // show polar coordinates, converting angle to degrees
-void show_polar_ptr(polar *dapos)
-{
-    using namespace std;
-    const double Rad_to_deg = 57.29577951;
+void show_polar_ptr(const polar *dapos) {
+	using namespace std;
+	const double Rad_to_deg = 57.29577951;
 
-    cout << "distance = " << dapos->distance;
-    cout << ", angle = " << dapos->angle * Rad_to_deg;
-    cout << " degrees\n";
+	cout << "distance = " << dapos->distance;
+	cout << ", angle = " << dapos->angle * Rad_to_deg;
+	cout << " degrees\n";
+}
+
+//Listing 7.14 - toppfive.cpp - handling an array of string objects
+using namespace std;
+void display_string(const string[], int);
+
+void listing_7_14() {
+	using namespace std;
+	cin.get();
+	const int SIZE = 5;
+	string list[SIZE];
+	cout << "Listing 7.14.\n\n";
+	cout << "Enter your five favorite astronomical sights:\n";
+	for (int i = 0; i < SIZE; i++) {
+		cout << i + 1 << ": ";
+		getline(cin, list[i]);
+	}
+	cout << "Your list:\n";
+	display_string(list, SIZE);
+}
+
+void display_string(const string sa[], int n) {
+	for (int i = 0; i < n; i++) {
+		std::cout << i + 1 << ": " << sa[i] << endl;
+	}
 }
