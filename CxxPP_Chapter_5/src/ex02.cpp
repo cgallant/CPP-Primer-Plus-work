@@ -20,6 +20,5 @@ void ex02() {/*
 		factorials[i] = i * factorials[i - 1];
 	}
 	for (int i = 0; i <= array_size; ++i) {
-		cout << i << "! = " << factorials[i] << endl;
-		*/
+		cout << i << "! = " << factorials[i] << endl;*/
 }
