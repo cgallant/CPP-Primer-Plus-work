@@ -304,3 +304,48 @@ void show_polar (polar dapos)
     cout << ", angle = " << dapos.angle * Rad_to_deg;
     cout << " degrees\n";
 }
+//LISTING 7.13; Structptr.cpp -- functions with a structure argument
+// structure declarations
+
+// prototypes
+polar rect_to_polar_ptr(rect *);
+void show_polar_ptr(polar *);
+
+void listing_7_13()
+{
+    using namespace std;
+    rect rplace;
+    polar pplace;
+
+    cout << "Enter the x and y values: ";
+    while (cin >> rplace.x >> rplace.y)  // slick use of cin
+    {
+        pplace = rect_to_polar_ptr(&rplace);
+        show_polar_ptr(&pplace);
+        cout << "Next two numbers (q to quit): ";
+    }
+    cout << "Done.\n";
+}
+
+// convert rectangular to polar coordinates
+polar rect_to_polar_ptr(rect *xypos)
+{
+    using namespace std;
+    polar answer;
+
+    answer.distance =
+    sqrt( xypos->x * xypos->x + xypos->y * xypos->y);
+    answer.angle = atan2(xypos->y, xypos->x);
+    return answer;      // returns a polar structure
+}
+
+// show polar coordinates, converting angle to degrees
+void show_polar_ptr(polar *dapos)
+{
+    using namespace std;
+    const double Rad_to_deg = 57.29577951;
+
+    cout << "distance = " << dapos->distance;
+    cout << ", angle = " << dapos->angle * Rad_to_deg;
+    cout << " degrees\n";
+}
