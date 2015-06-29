@@ -6,6 +6,7 @@
  */
 
 #include <iostream>
+#include <cmath>
 
 long double probability(int numbers, int picks);
 
@@ -161,7 +162,6 @@ int sum_array_4(const int * begin, const int *end) { //parameters are array name
 	return total;
 }
 // LISTING 7.9; strfun.cpp
-
 unsigned int c_in_string(const char *, char);
 void listing_7_9() {
 	using namespace std;
@@ -217,7 +217,6 @@ char * buildstr(char c, int n) {
 }
 
 /// LISTING 7.11;  Travel.cpp - using structures with functions
-
 struct travel_time {
 	int hours;
 	int mins;
@@ -248,4 +247,60 @@ travel_time sum(travel_time t1, travel_time t2) {
 void show_travel_time(travel_time temp) {
 	std::cout << temp.hours << " hours, " << temp.mins << " minutes"
 			<< std::endl;
+}
+
+//LISTING 7.12; Structfun.cpp -- functions with a structure argument
+// structure declarations
+struct polar
+{
+    double distance;      // distance from origin
+    double angle;         // direction from origin
+};
+struct rect
+{
+    double x;             // horizontal distance from origin
+    double y;             // vertical distance from origin
+};
+
+// prototypes
+polar rect_to_polar(rect xypos);
+void show_polar(polar dapos);
+
+void listing_7_12()
+{
+    using namespace std;
+    rect rplace;
+    polar pplace;
+
+    cout << "Enter the x and y values: ";
+    while (cin >> rplace.x >> rplace.y)  // slick use of cin
+    {
+        pplace = rect_to_polar(rplace);
+        show_polar(pplace);
+        cout << "Next two numbers (q to quit): ";
+    }
+    cout << "Done.\n";
+}
+
+// convert rectangular to polar coordinates
+polar rect_to_polar(rect xypos)
+{
+    using namespace std;
+    polar answer;
+
+    answer.distance =
+    sqrt( xypos.x * xypos.x + xypos.y * xypos.y);
+    answer.angle = atan2(xypos.y, xypos.x);
+    return answer;      // returns a polar structure
+}
+
+// show polar coordinates, converting angle to degrees
+void show_polar (polar dapos)
+{
+    using namespace std;
+    const double Rad_to_deg = 57.29577951;
+
+    cout << "distance = " << dapos.distance;
+    cout << ", angle = " << dapos.angle * Rad_to_deg;
+    cout << " degrees\n";
 }

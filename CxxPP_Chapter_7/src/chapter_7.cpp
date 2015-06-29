@@ -38,6 +38,9 @@ int main(void){
 	case 11:
 		listing_7_11();
 		break;
+	case 12:
+		listing_7_12();
+		break;
 	default:
 		cout<<"No such listing.\n\n";
 	}
