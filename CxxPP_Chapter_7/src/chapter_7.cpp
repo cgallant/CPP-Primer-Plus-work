@@ -70,6 +70,9 @@ int main(void) {
 	case 1:
 		ex01();
 		break;
+	case 2:
+		ex02();
+		break;
 	default:
 		cout << "No such exercise.'\n";
 	}
