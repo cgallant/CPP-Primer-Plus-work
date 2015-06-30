@@ -9,16 +9,18 @@
 #include <cmath>
 #include <string>
 
+//LISTING 7.4
 long double probability(int numbers, int picks);
 
 void listing_7_4() {
 	using namespace std;
 	int total, choices;
 	cout << "Listing 7.4; Lotto.cpp\n\n"
-			<< "Enter the total number of choices on the game card and the total number of picks allowed: ";
+			<< "Enter the total number of choices on the game card"
+			<< "and the total number of picks allowed: ";
 	while (cin >> total >> choices) {
 		cout << "You have one chance in " << probability(total, choices)
-				<< "of winning.\nNext two numbers (q to quit): ";
+				<< " of winning.\nNext two numbers (q to quit): ";
 	}
 	cout << "Bye.";
 }
@@ -30,7 +32,7 @@ long double probability(int numbers, int picks) {
 	}
 	return result;
 }
-
+//LISTING 7.5
 const int arr_size = 8;
 int sum_array_1(int[], int);
 
@@ -468,7 +470,7 @@ void chapter_review_12() {
 void struct_display(const applicant *ps) {
 	using namespace std;
 	cout << ps->name << endl;
-	for (int i = 0; i < sizeof(ps->credit_ratings)/sizeof(int); i++) {
+	for (int i = 0; i < sizeof(ps->credit_ratings) / sizeof(int); i++) {
 		cout << ps->credit_ratings[i] << endl;
 	}
 }
