@@ -63,8 +63,15 @@ int main(void) {
 		chapter_review_12();
 		break;
 	default:
-		cout << "No such listing.\n\n";
+		cout << "No such listing.\nProgramming exercise: ";
 	}
-
+	cin >> exercise;
+	switch (exercise) {
+	case 1:
+		ex01();
+		break;
+	default:
+		cout << "No such exercise.'\n";
+	}
 }
 
