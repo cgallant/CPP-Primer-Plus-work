@@ -15,8 +15,14 @@
 
 #include <iostream>
 
+struct s_expenses {
+	double exp_array[4];
+};
 void fill_expenses(double *);
 void show_expenses(double *);
+void fill_s_expenses(s_expenses *);
+void show_sexpenses(s_expenses *);
+
 const int Seasons = 4;
 const char * snames[Seasons] = { "Spring", "Summer", "Fall", "Winter" }; //array of pointers to four strings
 
@@ -25,6 +31,10 @@ void ex08() {
 	double expenses[Seasons];
 	fill_expenses(expenses);
 	show_expenses(expenses);
+	s_expenses st;
+	fill_s_expenses(&st);
+	show_sexpenses(&st);
+
 }
 void fill_expenses(double *a) {
 	using namespace std;
@@ -40,6 +50,24 @@ void show_expenses(double *a) {
 	for (int i = 0; i < Seasons; i++) {
 		cout << snames[i] << ": $" << a[i] << endl;
 		total += a[i];
+	}
+	cout << "Total: " << total << endl;
+}
+void fill_s_expenses(s_expenses * st) {
+	using namespace std;
+	for (int i = 0; i < 4; i++) {
+		cout << snames[i] << " expenses: ";
+		cin >> st->exp_array[i];
+	}
+
+}
+void show_sexpenses(s_expenses *st) {
+	using namespace std;
+	cout << "EXPENSES\n";
+	int total = 0;
+	for (int i = 0; i < Seasons; i++) {
+		cout << snames[i] << ": $" << st->exp_array[i] << endl;
+		total += st->exp_array[i];
 	}
 	cout << "Total: " << total;
 }
