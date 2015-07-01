@@ -34,5 +34,6 @@ void ex05();
 void ex06();
 void ex07();
 void ex08();
+void ex09();
 
 #endif /* CHAPTER_7_H_ */

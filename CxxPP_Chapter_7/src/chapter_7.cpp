@@ -91,6 +91,9 @@ int main(void) {
 	case 8:
 		ex08();
 		break;
+	case 9:
+		ex09();
+		break;
 	default:
 		cout << "No such exercise.'\n";
 	}
