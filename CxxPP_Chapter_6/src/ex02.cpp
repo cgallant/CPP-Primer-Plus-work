@@ -15,7 +15,7 @@ void ex02() {
 	using namespace std;
 	cin.get();
 	cout << "Programming exercise 2.\n\n";
-	cout << "Input up to 10 numbers (hit enter when done.\n";
+	cout << "Input up to 10 numbers (hit enter when done.)\n";
 	const int Max = 10;
 	double d_val[Max] = { }, sum = 0.0;
 	int entries = 0;
